@@ -1,0 +1,16 @@
+/* moved onboarding styles to styles folder */
+:root { --terracotta: #A8441B }
+.onboard-shell { min-height: 100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; background: linear-gradient(#fff7e6 0%, #ffd89b 30%, #f0843a 60%); padding: 40px 20px; }
+.onboard-header { text-align:center; margin-bottom:1.5rem; }
+.onboard-header h1 { font-family: var(--font-serif); font-size:2.25rem; margin:0 }
+.onboard-main { width:100%; display:flex; justify-content:center; }
+.onboard-card { width:100%; max-width:600px; background: rgba(255,255,255,0.85); border-radius:12px; padding:28px; box-sizing:border-box }
+.intent-grid { display:grid; grid-template-columns:repeat(1,1fr); gap:1rem; }
+@media(min-width:640px){ .intent-grid{ grid-template-columns:repeat(2,1fr);} }
+@media(min-width:980px){ .intent-grid{ grid-template-columns:repeat(3,1fr);} }
+.intent-card { padding:2rem; border-radius:12px; background:rgba(255,255,255,0.5); backdrop-filter:blur(6px); text-align:center; transition: transform .18s ease, box-shadow .18s ease; cursor:pointer }
+.intent-card:hover { transform:scale(1.03); box-shadow:0 12px 30px rgba(0,0,0,0.12); }
+.intent-card.selected { transform:scale(1.05); box-shadow:0 18px 40px rgba(0,0,0,0.18); border:2px solid rgba(168,68,27,0.9); }
+.onboard-footer { text-align:center; padding:2rem 1rem 3rem }
+.start-btn { padding:12px 28px; border-radius:999px; background:linear-gradient(90deg,#f16b2a,#A8441B); color:#fff; border:0; font-weight:700; cursor:pointer }
+.skip-link { margin-top:12px; display:block; color:rgba(0,0,0,0.6); text-decoration:underline; cursor:pointer }

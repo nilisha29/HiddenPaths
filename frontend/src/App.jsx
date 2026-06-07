@@ -1,34 +1,21 @@
-import { useState } from 'react'
-import LandingPage from './pages/LandingPage.jsx'
-import LoginPage from './pages/LoginPage.jsx'
-import RegisterPage from './pages/RegisterPage.jsx'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import LandingPage from './components/private/LandingPage.jsx'
+import Register from './pages/Register'
+import Onboarding from './pages/Onboarding'
+import Login from './pages/Login'
+import Home from './pages/Home'
 
 function App() {
-  const [page, setPage] = useState('landing')
-
-  if (page === 'login') {
-    return (
-      <LoginPage
-        onBack={() => setPage('landing')}
-        onSwitchToRegister={() => setPage('register')}
-      />
-    )
-  }
-
-  if (page === 'register') {
-    return (
-      <RegisterPage
-        onBack={() => setPage('landing')}
-        onSwitchToLogin={() => setPage('login')}
-      />
-    )
-  }
-
   return (
-    <LandingPage
-      onLoginClick={() => setPage('login')}
-      onRegisterClick={() => setPage('register')}
-    />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/onboarding" element={<Onboarding />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/home" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 

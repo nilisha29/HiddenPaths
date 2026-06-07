@@ -3,8 +3,11 @@
 }
 
 .auth-page-shell {
+  width: 100%;
   min-height: 100vh;
-  padding: 28px;
+  height: 100vh;
+  padding: 24px;
+  overflow: hidden;
   background: #f6efdf;
 }
 
@@ -12,12 +15,16 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: min(1200px, 100%);
-  min-height: calc(100vh - 56px);
+  height: min(760px, calc(100vh - 48px));
   margin: 0 auto;
   border-radius: 28px;
   overflow: hidden;
   box-shadow: 0 28px 70px rgba(65, 40, 20, 0.18);
   background: #f5eddc;
+}
+
+.choice-shell {
+  grid-template-columns: 0.95fr 1.05fr;
 }
 
 .auth-visual {
@@ -114,13 +121,18 @@
 .auth-form-panel {
   display: grid;
   place-items: center;
-  padding: 48px 28px;
+  padding: 32px 28px;
   background: #fbf3e2;
+  overflow: hidden;
 }
 
 .auth-card {
   width: min(100%, 450px);
   color: #3f342e;
+}
+
+.choice-card {
+  width: min(100%, 500px);
 }
 
 .auth-card-header h2 {
@@ -139,6 +151,51 @@
 
 .auth-form {
   margin-top: 30px;
+}
+
+.choice-grid {
+  display: grid;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.choice-card-item {
+  display: grid;
+  gap: 8px;
+  text-align: left;
+  padding: 18px;
+  border: 1px solid rgba(206, 166, 145, 0.52);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.56);
+  color: #3f342e;
+}
+
+.choice-icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  color: #b45123;
+  background: rgba(180, 81, 35, 0.12);
+}
+
+.choice-card-item strong {
+  font-size: 1.1rem;
+}
+
+.choice-card-item p {
+  margin: 0;
+  color: #7d6a5e;
+  line-height: 1.55;
+}
+
+.choice-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 22px;
 }
 
 .field-group {
@@ -801,6 +858,86 @@
   text-align: center;
 }
 
+/* Choice page large layout to match design */
+.choice-visual {
+  background: linear-gradient(180deg, #f6efdf 0%, #f4e5cc 30%, #f0b26b 62%, #e07a2f 100%);
+  display: block;
+  padding: 40px 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.choice-hero {
+  text-align: center;
+  margin: 0 auto;
+  color: #2b211b;
+}
+
+.choice-hero h1 {
+  font-family: var(--font-serif);
+  font-size: 3.2rem;
+  margin: 8px 0 6px;
+}
+
+.choice-hero .auth-quote {
+  margin-top: 8px;
+  font-size: 1rem;
+  color: rgba(47,36,30,0.8);
+}
+
+.choice-grid-large {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 12px;
+}
+
+.choice-card-large {
+  height: 140px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.28);
+  backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #2f241e;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.choice-icon-large {
+  width: 54px;
+  height: 54px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.6);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+}
+
+.choice-submit-large {
+  padding: 12px 40px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #b74e24, #cb5a2b);
+  box-shadow: 0 18px 40px rgba(199,86,42,0.18);
+}
+
+.choice-form-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 40px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0.5));
+}
+
+.auth-shell.choice-shell {
+  width: min(1100px, 100%);
+  height: min(820px, calc(100vh - 48px));
+}
+
+.sun-glow { display: none; }
+
 .centered-head h2,
 .journal-head h2,
 .community-copy h2,
@@ -1166,13 +1303,14 @@
 
 @media (max-width: 760px) {
   .auth-page-shell {
-    padding: 16px;
+    padding: 12px;
+    height: 100vh;
   }
 
   .auth-shell {
     grid-template-columns: 1fr;
     width: 100%;
-    min-height: calc(100vh - 32px);
+    height: calc(100vh - 24px);
     border-radius: 22px;
   }
 
@@ -1182,7 +1320,7 @@
   }
 
   .auth-form-panel {
-    padding: 32px 18px 42px;
+    padding: 24px 16px;
   }
 
   .auth-card-header h2 {
@@ -1195,6 +1333,10 @@
 
   .social-auth-row {
     grid-template-columns: 1fr;
+  }
+
+  .choice-grid {
+    gap: 10px;
   }
 
   .topbar {
