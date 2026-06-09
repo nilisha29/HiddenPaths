@@ -1,4 +1,4 @@
-:root {
+/* :root {
 	--terracotta: #A8441B;
 	--cream: #FDFBF7;
 	--muted: #6b5b4f;
@@ -33,4 +33,32 @@
 .auth-footer{ margin-top:14px; color:var(--muted); text-align:center }
 .auth-footer a{ color:var(--terracotta); text-decoration:none }
 
-@media(max-width:899px){ .visual-brand{ padding:28px } .auth-form-wrap{ padding:28px } }
+@media(max-width:899px){ .visual-brand{ padding:28px } .auth-form-wrap{ padding:28px } } */
+
+
+/* Unique overrides just for the login screen styling elements */
+.login-split-panel {
+  display: none;
+  position: relative;
+  align-items: flex-end;
+  padding: 3rem;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (min-width: 768px) {
+  .login-split-panel {
+    display: flex;
+  }
+}
+
+.text-accent-gold {
+  color: #FCE3A1;
+}
+
+.quote-subtext {
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.95);
+}

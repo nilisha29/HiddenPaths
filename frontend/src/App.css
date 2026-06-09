@@ -5,17 +5,17 @@
 .auth-page-shell {
   width: 100%;
   min-height: 100vh;
-  height: 100vh;
   padding: 24px;
-  overflow: hidden;
-  background: #f6efdf;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: linear-gradient(180deg, #fffaf4 0%, #f6efdf 100%);
 }
 
 .auth-shell {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: min(1200px, 100%);
-  height: min(760px, calc(100vh - 48px));
+  min-height: min(820px, calc(100vh - 48px));
   margin: 0 auto;
   border-radius: 28px;
   overflow: hidden;
@@ -933,7 +933,7 @@
 
 .auth-shell.choice-shell {
   width: min(1100px, 100%);
-  height: min(820px, calc(100vh - 48px));
+  min-height: min(860px, calc(100vh - 48px));
 }
 
 .sun-glow { display: none; }
@@ -1304,13 +1304,13 @@
 @media (max-width: 760px) {
   .auth-page-shell {
     padding: 12px;
-    height: 100vh;
+    min-height: 100vh;
   }
 
   .auth-shell {
     grid-template-columns: 1fr;
     width: 100%;
-    height: calc(100vh - 24px);
+    min-height: calc(100vh - 24px);
     border-radius: 22px;
   }
 

@@ -22,18 +22,16 @@ function isValidEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
 }
 
-userSchema.pre('save', async function (next) {
+userSchema.pre('save', async function () {
   const user = this
   if (!isValidEmail(user.email)) {
-    const err = new Error('Invalid email format')
-    return next(err)
+    throw new Error('Invalid email format')
   }
 
   if (user.isModified('password')) {
     const salt = await bcrypt.genSalt(10)
     user.password = await bcrypt.hash(user.password, salt)
   }
-  next()
 })
 
 userSchema.methods.comparePassword = async function (candidate) {

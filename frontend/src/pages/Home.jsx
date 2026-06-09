@@ -1,278 +1,215 @@
-import {
-  FiArrowRight,
-  FiCamera,
-  FiCompass,
-  FiGlobe,
-  FiHeart,
-  FiLayers,
-  FiMail,
-  FiMapPin,
-  FiMenu,
-  FiSearch,
-  FiShield,
-  FiStar,
-  FiSun,
-  FiUsers,
-} from 'react-icons/fi'
-import '../styles/landing.css'
-import {
-  navLinks,
-  hero,
-  featuredExperiences,
-  intentCategories,
-  steps,
-  journalEntries,
-  stats,
-} from '../mockData'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import '../styles/landing.css';
+import '../styles/home.css';
 
-function Home() {
+export default function Home() {
+  const navigate = useNavigate();
+
   return (
-    <>
-      {/* Header */}
-      <header className="landing-topbar">
-        <div className="container">
-          <div className="topbar-inner">
-            <div className="brand">HiddenPaths</div>
-            <nav className="nav-links">
-              {navLinks.map((link, index) => (
-                <a key={link} className={`nav-link ${index === 0 ? 'active' : ''}`} href={`#${link.toLowerCase()}`}>
-                  {link}
-                </a>
-              ))}
-            </nav>
-            <div className="auth-actions">
-              <button className="btn ghost">Profile</button>
-              <button className="btn ghost icon-button" style={{ display: 'none' }}><FiMenu /></button>
+    <div style={{ backgroundColor: '#FDFBF7', minHeight: '100vh' }}>
+      {/* Authenticated Dashboard Header Navbar */}
+      <nav className="auth-nav">
+        <a href="#" onClick={() => navigate('/home')} className="logo">HiddenPaths</a>
+        <div className="nav-links">
+          <a href="#" onClick={() => navigate('/home')} className="active">Home</a>
+          <a href="#" onClick={() => navigate('/explore')}>Explore</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </div>
+        <div className="user-profile-actions">
+          <button className="icon-btn">🔍</button>
+          <button className="icon-btn">🔔</button>
+          <div className="avatar-circle" title="Rana's Profile">R</div>
+        </div>
+      </nav>
+
+      {/* Hero Welcome Search Banner Section */}
+      <div className="home-hero-bg" style={{ backgroundImage: "linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1528164344705-47542687000d?q=80&w=1920')" }}>
+        <div className="home-hero-content">
+          <span className="user-salutation">Welcome back, Rana</span>
+          <h1>Where will your path <br />lead <span>next?</span></h1>
+          
+          <div className="search-pill">
+            <input type="text" placeholder="Search by destination, craft or guide..." />
+            <button className="btn-search" onClick={() => navigate('/explore')}>Find Magic</button>
+          </div>
+
+          <div className="pill-suggestions">
+            <span className="suggestion-tag" onClick={() => navigate('/explore')}>Artisan Tours</span>
+            <span className="suggestion-tag" onClick={() => navigate('/explore')}>Tea Houses</span>
+            <span className="suggestion-tag" onClick={() => navigate('/explore')}>High Altitudes</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Split Highlights Dashboard Layout Block */}
+      <div className="dashboard-highlights">
+        {/* Handpicked Main Showcase Card */}
+        <div className="showcase-panel">
+          <div className="panel-img-box">
+            <img src="https://images.unsplash.com/photo-1582650625119-3a31f8fa2699?q=80&w=800" alt="Annapurna Hearth" />
+            <span className="category-badge">Next Adventure</span>
+          </div>
+          <div className="panel-body-box">
+            <div>
+              <span className="time-frame">⏳ In 12 days</span>
+              <h2>Annapurna Hearth &amp; Heritage</h2>
+              <p>A 6-day journey through the heart of Gurung villages, staying with local families and learning the art of wild honey harvesting.</p>
+            </div>
+            <div className="itinerary-action-row">
+              <div className="avatar-stack">
+                <div className="stack-avatar" style={{backgroundColor: '#cbd5e1'}}></div>
+                <div className="stack-avatar" style={{backgroundColor: '#94a3b8'}}></div>
+                <span style={{fontSize: '0.7rem', color: '#71717a', marginLeft: '0.5rem'}}>+2 slots</span>
+              </div>
+              <button className="btn-itinerary">View Itinerary</button>
             </div>
           </div>
         </div>
-      </header>
 
-      {/* Hero Section */}
-      <section className="hero" id="home" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop')` }}>
-        <div className="container">
-          <div className="hero-inner">
-            <div className="hero-left">
-              <span className="hero-badge">{hero.badge}</span>
-              <h1 className="hero-title">
-                {hero.title}
-                <span className="accent-italic"> {hero.accent}</span>
-              </h1>
-              <p className="hero-copy">{hero.subtitle}</p>
+        {/* User Impact Tracker Meter Widget */}
+        <div className="impact-widget">
+          <div className="widget-header">
+            <h3>Your Impact</h3>
+            <span style={{fontSize: '1.2rem'}}>🌱</span>
+          </div>
+          <p style={{fontSize: '0.75rem', opacity: 0.8, margin: '0.25rem 0 1rem'}}>Since joining HiddenPaths, your journeys have directly supported:</p>
+          
+          <div>
+            <div className="impact-metric-row">
+              <span className="metric-label-text">Artisan Families</span>
+              <span className="metric-total-value">4</span>
+            </div>
+            <div className="impact-metric-row">
+              <span className="metric-label-text">Days of Local Work</span>
+              <span className="metric-total-value">18</span>
+            </div>
+          </div>
 
-              <div className="search-row">
-                <div className="search-input">
-                  <FiMapPin style={{ marginRight: '8px', color: '#888' }} />
-                  <input type="text" placeholder="Where to?" />
+          <p className="widget-note">You're making a world of difference, Rana.</p>
+        </div>
+      </div>
+
+      {/* Handpicked For You Experience Grid Component */}
+      <section className="section-wrapper" style={{maxWidth: '1200px', margin: '0 auto', padding: '4rem 2rem'}}>
+        <div className="section-header">
+          <div>
+            <h2 className="section-title">Handpicked for you</h2>
+            <p className="section-subtitle">Based on your interest in mountain culture and Nepalese craftsmanship</p>
+          </div>
+          <a href="#" onClick={() => navigate('/explore')} className="see-all">Explore all &rarr;</a>
+        </div>
+        
+        <div className="card-grid">
+          {[
+            { title: "Master Thangka Painting", host: "Maitri Lama", price: "4,500", days: "3 days", img: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?q=80&w=600", rating: "4.9 (62 reviews)" },
+            { title: "Himalayan Spices Journey", host: "Chef Tshering", price: "2,000", days: "Half Day", img: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=600", rating: "5.0 (18 reviews)" },
+            { title: "Monastic Silence Retreat", host: "Nawang Rinpoche", price: "6,500", days: "5 days", img: "https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=600", rating: "4.8 (34 reviews)" }
+          ].map((item, idx) => (
+            <div key={idx} className="exp-card">
+              <img src={item.img} alt={item.title} className="card-img" />
+              <div className="card-body">
+                <span className="card-rating">★ {item.rating}</span>
+                <h3 className="card-title" style={{fontSize: '1.1rem', marginTop: '0.2rem'}}>{item.title}</h3>
+                <p className="card-host">Hosted by {item.host} • {item.days}</p>
+                <div className="card-footer">
+                  <div>
+                    <span style={{fontSize:'0.65rem', color:'#a1a1aa', display:'block'}}>From</span>
+                    <span className="price-amount">NPR {item.price}</span><span style={{color:'#71717a', fontSize:'0.75rem'}}> / person</span>
+                  </div>
+                  <button className="btn-book">Book</button>
                 </div>
-                <button className="btn find">Find Magic</button>
               </div>
+            </div>
+          ))}
+        </div>
+      </section>
 
-              <div className="tag-row">
-                {hero.tags.map((tag) => (
-                  <span key={tag} className="tag-pill">{tag}</span>
-                ))}
+      {/* From The Journal Section */}
+      <section className="section-wrapper" style={{maxWidth: '1200px', margin: '0 auto', padding: '0 2rem 5rem'}}>
+        <div className="section-header">
+          <div>
+            <h2 className="section-title">From the Journal</h2>
+            <p className="section-subtitle">Reflections and stories from the travelers who walk the hidden paths with us.</p>
+          </div>
+        </div>
+
+        <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(450px, 1fr))', gap: '2rem'}}>
+          <div className="journal-showcase-card">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=400" alt="Mustang" className="journal-side-img" />
+            <div className="journal-main-content">
+              <span className="journal-datestamp">October 2026</span>
+              <h3>The Silence of the Mustang</h3>
+              <p className="journal-snippet-text">"I expected the mountains to be loud with wind, but in Upper Mustang, the silence has its own voice. A voice of echoes of prayer and the slow rhythm of the ancient stone..."</p>
+              <div className="journal-author-footer">
+                <div className="author-circle-pic" style={{backgroundColor: '#e2e8f0'}}></div>
+                <div className="author-profile-info">
+                  <h5>Marcus Thorne</h5>
+                  <p>Guided by Pemba Sherpa</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="journal-showcase-card">
+            <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=400" alt="Patan weaving" className="journal-side-img" />
+            <div className="journal-main-content">
+              <span className="journal-datestamp">November 2026</span>
+              <h3>Threads of Heritage in Patan</h3>
+              <p className="journal-snippet-text">"In the narrow alleys of Patan, the rhythmic clacking of looms is the heartbeat of the city. For six generations, this family has spun heritage into silk..."</p>
+              <div className="journal-author-footer">
+                <div className="author-circle-pic" style={{backgroundColor: '#cbd5e1'}}></div>
+                <div className="author-profile-info">
+                  <h5>Sarah Jenkins</h5>
+                  <p>Visited Artisan House</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Popular Experiences */}
-      <section className="content" id="explore">
-        <div className="container">
-          <div className="section-head">
-            <div>
-              <h2 style={{ margin: '0' }}>Popular Experiences</h2>
-              <p className="section-sub">Top-rated adventures loved by our community.</p>
-            </div>
-            <a href="#journal" style={{ textDecoration: 'none', color: 'var(--accent-dark)', display: 'flex', alignItems: 'center', gap: '6px' }}>
-              Explore all <FiArrowRight />
-            </a>
+      {/* Standard Shared Structural Site Footer */}
+      <footer className="main-footer">
+        <div className="footer-grid">
+          <div className="footer-brand">
+            <h2>HiddenPaths</h2>
+            <p>Authentic, local experiences handcrafted for the mindful traveler interested in uncovering heritage throughout discovery journeys.</p>
           </div>
-
-          <div className="experience-grid">
-            {featuredExperiences.map((exp) => (
-              <div key={exp.id} className="experience-card">
-                <div className="experience-media" style={{ backgroundImage: `url(${exp.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-                  <button style={{ position: 'absolute', top: '12px', right: '12px', background: 'rgba(255,255,255,0.9)', border: 'none', borderRadius: '50%', width: '40px', height: '40px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <FiHeart size={18} />
-                  </button>
-                </div>
-                <div className="experience-body">
-                  <p style={{ margin: '6px 0 8px', color: '#b84b2f' }}>
-                    <FiStar size={14} style={{ marginRight: '4px' }} />
-                    {exp.rating} ({exp.reviews})
-                  </p>
-                  <h3>{exp.title}</h3>
-                  <p style={{ fontSize: '14px', color: '#888', margin: '4px 0 12px' }}>Hosted by {exp.host}</p>
-                  <p className="price">{exp.price} per person</p>
-                  <button className="btn small primary">Book Now</button>
-                </div>
-              </div>
-            ))}
+          <div className="footer-col">
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="#">Experiences</a></li>
+              <li><a href="#">Host a Local</a></li>
+              <li><a href="#">Adventure Guide</a></li>
+              <li><a href="#">Become a Host</a></li>
+            </ul>
+          </div>
+          <div className="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">Our Story</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Support Terms</a></li>
+            </ul>
+          </div>
+          <div className="footer-col">
+            <h4>The Journal</h4>
+            <p style={{color:'#a1a1aa', fontSize:'0.8rem', marginBottom:'1rem'}}>Receive monthly field notes directly from local hosts.</p>
+            <input type="email" placeholder="Your email address" className="newsletter-input" />
+            <button className="btn-subscribe">Subscribe</button>
           </div>
         </div>
-      </section>
-
-      {/* Intent Section */}
-      <section className="intent-section" id="intent">
-        <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '28px' }}>
-            <h2 style={{ margin: '0' }}>Find your path by intent</h2>
-            <p style={{ color: '#7b6b63', marginTop: '6px' }}>Simple categories for every kind of journey.</p>
-          </div>
-
-          <div className="intent-grid">
-            {intentCategories.map(({ label, key }) => {
-              const Icon = {
-                adventure: FiCompass,
-                cultural: FiLayers,
-                culinary: FiSun,
-                artisan: FiCamera,
-                wellness: FiShield,
-                history: FiGlobe,
-              }[key] || FiCompass
-
-              return (
-                <div key={label} className="intent-card">
-                  <span className="intent-icon">
-                    <Icon size={24} />
-                  </span>
-                  <span style={{ fontSize: '14px', fontWeight: '600' }}>{label}</span>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Community Section */}
-      <section className="community-section">
-        <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }}>
-            <div>
-              <p style={{ color: '#b84b2f', margin: '0 0 12px', fontSize: '14px', fontWeight: '600' }}>Community-powered discovery</p>
-              <h2 style={{ margin: '0 0 18px' }}>Why choose HiddenPaths</h2>
-              <p>We believe the best travel stories aren't found in guidebooks. They're lived through the eyes of the people who call this place home. HiddenPaths connects curious travelers with local guardians of tradition.</p>
-              <button className="btn ghost" style={{ marginTop: '18px', color: '#fff', borderColor: 'rgba(255,255,255,0.3)' }}>Learn More</button>
-            </div>
-
-            <div className="stats-grid">
-              {stats.map(({ value, label }) => (
-                <div key={label} className="stat-card">
-                  <strong>{value}</strong>
-                  <span style={{ display: 'block', marginTop: '6px', fontSize: '14px', color: 'rgba(255,255,255,0.8)' }}>{label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Steps Section */}
-      <section className="content">
-        <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '28px' }}>
-            <h2 style={{ margin: '0' }}>Your Path to Discovery</h2>
-            <p style={{ color: '#7b6b63', marginTop: '6px' }}>Simple steps toward an unforgettable journey.</p>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px', marginTop: '24px' }}>
-            {steps.map((step, idx) => (
-              <div key={step.title} style={{ textAlign: 'center', padding: '24px', borderRadius: '12px', background: '#f9f6f3' }}>
-                <div style={{ fontSize: '32px', fontWeight: '700', color: 'var(--accent-dark)', marginBottom: '12px' }}>0{idx + 1}</div>
-                <h3 style={{ margin: '12px 0 8px', fontFamily: "'Playfair Display', serif" }}>{step.title}</h3>
-                <p style={{ color: '#7b6b63', fontSize: '14px', margin: '0' }}>{step.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Journal Section */}
-      <section className="content" id="journal" style={{ background: '#fbf6f2' }}>
-        <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', marginBottom: '40px' }}>
-            <div>
-              <p style={{ color: '#7b6b63', margin: '0 0 8px', fontSize: '14px' }}>The Community</p>
-              <h2 style={{ margin: '0' }}>From the Journal</h2>
-            </div>
-            <p style={{ color: '#7b6b63', fontSize: '15px', lineHeight: '1.6' }}>Words and stories from the travelers who walk the hidden paths with us.</p>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px' }}>
-            {journalEntries.map((entry, idx) => (
-              <article key={entry.name} style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '16px', padding: '24px', background: '#fff', borderRadius: '12px', boxShadow: '0 8px 20px rgba(0,0,0,0.04)' }}>
-                <div style={{ width: '60px', height: '60px', borderRadius: '50%', background: `hsl(${idx * 60}, 70%, 60%)` }} />
-                <div>
-                  <strong style={{ display: 'block', marginBottom: '4px' }}>{entry.name}</strong>
-                  <span style={{ fontSize: '13px', color: '#aaa', display: 'block', marginBottom: '12px' }}>{entry.meta}</span>
-                  <p style={{ margin: '0', color: '#555', fontSize: '15px', fontStyle: 'italic' }}>"{entry.quote}"</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="site-footer">
-        <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '40px', paddingBottom: '32px', borderBottom: '1px solid rgba(0,0,0,0.1)' }}>
-            <div>
-              <h3 style={{ margin: '0 0 12px', fontFamily: "'Playfair Display', serif" }}>HiddenPaths</h3>
-              <p style={{ margin: '0', color: '#888', fontSize: '14px', lineHeight: '1.6' }}>Authentic local experiences curated for the soulful traveler.</p>
-              <div style={{ display: 'flex', gap: '12px', marginTop: '16px' }}>
-                <FiGlobe style={{ cursor: 'pointer' }} />
-                <FiCamera style={{ cursor: 'pointer' }} />
-                <FiMail style={{ cursor: 'pointer' }} />
-              </div>
-            </div>
-
-            <div>
-              <h4 style={{ margin: '0 0 12px', fontSize: '14px' }}>Explore</h4>
-              <ul style={{ listStyle: 'none', margin: '0', padding: '0' }}>
-                {['Experiences', 'Local Hosts', 'Destinations'].map(link => (
-                  <li key={link} style={{ marginBottom: '8px' }}>
-                    <a href="#" style={{ color: '#888', textDecoration: 'none', fontSize: '14px' }}>{link}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h4 style={{ margin: '0 0 12px', fontSize: '14px' }}>Company</h4>
-              <ul style={{ listStyle: 'none', margin: '0', padding: '0' }}>
-                {['Our Story', 'Careers', 'Privacy Policy'].map(link => (
-                  <li key={link} style={{ marginBottom: '8px' }}>
-                    <a href="#" style={{ color: '#888', textDecoration: 'none', fontSize: '14px' }}>{link}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h4 style={{ margin: '0 0 12px', fontSize: '14px' }}>The Journal</h4>
-              <p style={{ margin: '0 0 12px', color: '#888', fontSize: '14px' }}>Monthly stories from hidden paths.</p>
-              <div style={{ display: 'flex', gap: '8px' }}>
-                <input type="email" placeholder="Your email" style={{ flex: 1, padding: '8px 12px', border: '1px solid #ddd', borderRadius: '6px', fontSize: '13px' }} />
-                <button style={{ padding: '8px 12px', background: 'var(--accent-dark)', color: '#fff', border: 'none', borderRadius: '6px', cursor: 'pointer' }}>Subscribe</button>
-              </div>
-            </div>
-          </div>
-
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '24px', fontSize: '13px', color: '#888' }}>
-            <span>© 2024 HiddenPaths. Made with ♥ in Nepal.</span>
-            <div style={{ display: 'flex', gap: '24px' }}>
-              <a href="#" style={{ color: '#888', textDecoration: 'none' }}>Terms of Service</a>
-              <a href="#" style={{ color: '#888', textDecoration: 'none' }}>Cookie Policy</a>
-            </div>
+        <div className="footer-bottom">
+          <div>© 2026 HiddenPaths. Made with ❤️ in Nepal.</div>
+          <div className="footer-bottom-links">
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy Policy</a>
           </div>
         </div>
       </footer>
-    </>
-  )
+    </div>
+  );
 }
-
-export default Home

@@ -1,4 +1,4 @@
-/* moved onboarding styles to styles folder */
+/* moved onboarding styles to styles folder
 :root { --terracotta: #A8441B }
 .onboard-shell { min-height: 100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; background: linear-gradient(#fff7e6 0%, #ffd89b 30%, #f0843a 60%); padding: 40px 20px; }
 .onboard-header { text-align:center; margin-bottom:1.5rem; }
@@ -13,4 +13,139 @@
 .intent-card.selected { transform:scale(1.05); box-shadow:0 18px 40px rgba(0,0,0,0.18); border:2px solid rgba(168,68,27,0.9); }
 .onboard-footer { text-align:center; padding:2rem 1rem 3rem }
 .start-btn { padding:12px 28px; border-radius:999px; background:linear-gradient(90deg,#f16b2a,#A8441B); color:#fff; border:0; font-weight:700; cursor:pointer }
-.skip-link { margin-top:12px; display:block; color:rgba(0,0,0,0.6); text-decoration:underline; cursor:pointer }
+.skip-link { margin-top:12px; display:block; color:rgba(0,0,0,0.6); text-decoration:underline; cursor:pointer } */
+
+
+.onboarding-screen {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #FFFDF6, #FCE3A1, #2E4F4F);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  color: #222222;
+}
+
+.onboarding-brand {
+  text-align: center;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #52525b;
+  font-weight: 500;
+  padding-top: 1rem;
+}
+
+.onboarding-content {
+  width: 100%;
+  max-width: 700px;
+  text-align: center;
+  margin: auto 0;
+}
+
+.onboarding-content h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.onboarding-content p {
+  color: #4b5563;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.intent-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  max-width: 550px;
+  margin: 2rem auto;
+}
+
+@media (min-width: 480px) {
+  .intent-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.intent-card {
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s, border-color 0.2s;
+}
+
+.intent-card:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.intent-card.selected {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: #A8441B;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transform: scale(1.05);
+}
+
+.intent-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.intent-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #1f2937;
+}
+
+.action-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn-finish {
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: background 0.2s;
+}
+
+.btn-finish.active {
+  background-color: #A8441B;
+}
+
+.btn-finish.active:hover {
+  background-color: #8e3714;
+}
+
+.btn-finish.disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.btn-skip {
+  background: none;
+  border: none;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: underline;
+  cursor: pointer;
+}

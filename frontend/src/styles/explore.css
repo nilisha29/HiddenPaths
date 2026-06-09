@@ -1,0 +1,367 @@
+/* Core Structural Layout Split Frame */
+.explore-layout {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: grid;
+  /* Sidebar strictly allocated 240px; main column takes all remaining space */
+  grid-template-columns: 240px 1fr; 
+  gap: 2.5rem;
+  background-color: #FFFDF9; /* Signature warm off-white background */
+}
+
+/* Sidebar Navigation Rules */
+.filter-sidebar-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1.5rem;
+}
+
+.sidebar-title-row h3 {
+  font-family: Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 0;
+  color: #2D251E;
+}
+
+.btn-clear-filters {
+  background: none;
+  border: none;
+  font-size: 0.8rem;
+  color: #C87A53;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Individual Filter Group Container Blocks */
+.filter-group-box {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.filter-group-box h4 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #A1958A;
+  letter-spacing: 0.08em;
+  margin: 0 0 0.25rem 0;
+  text-transform: uppercase;
+}
+
+/* Checkboxes Stacking Vertically Correctly */
+.checkbox-row-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.9rem;
+  color: #4A3E3D;
+  cursor: pointer;
+}
+
+.checkbox-row-item input[type="checkbox"],
+.checkbox-row-item input[type="radio"] {
+  accent-color: #A8441B;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* Duration Stacking Buttons Block */
+.duration-selector-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 180px;
+}
+
+.duration-chip-btn {
+  width: 100%;
+  padding: 0.55rem;
+  border-radius: 6px;
+  border: 1px solid #E6DFD5;
+  background-color: #FFFFFF;
+  color: #4A3E3D;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.duration-chip-btn.active {
+  background-color: #A8441B !important;
+  color: #FFFFFF !important;
+  border-color: #A8441B !important;
+}
+
+/* Right Main Column Layout Frame */
+.explore-main-display {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.explore-header-titles h2 {
+  font-family: Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin: 0 0 0.25rem 0;
+  color: #2D251E;
+}
+
+.explore-header-titles p {
+  font-size: 0.9rem;
+  color: #7A6E63;
+  margin: 0;
+}
+
+/* Top Horizontal Search Controls Layout Bar */
+.search-sort-bar {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.explore-search-input-wrapper {
+  position: relative;
+  flex: 1;
+}
+
+.explore-search-input-wrapper .search-glass-icon {
+  position: absolute;
+  left: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #A1958A;
+}
+
+.explore-search-input-wrapper input {
+  width: 100%;
+  padding: 0.65rem 1rem 0.65rem 2.5rem;
+  border: 1px solid #E6DFD5;
+  border-radius: 20px;
+  background-color: #FDFBF7;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.sort-container-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #7A6E63;
+  letter-spacing: 0.05em;
+}
+
+.sort-select-dropdown {
+  padding: 0.65rem 1.5rem 0.65rem 1rem;
+  border: 1px solid #E6DFD5;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  font-size: 0.85rem;
+  color: #2D251E;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Active Pill Badges arranged Horizontally Inline */
+.active-pill-row {
+  display: flex;
+  flex-direction: row; 
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0.5rem 0;
+}
+
+.active-filter-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #A8441B; 
+  color: #FFFFFF;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.active-filter-badge button {
+  background: none;
+  border: none;
+  color: #FFFFFF;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+}
+
+/* Strict Three-Column Grid Setup */
+.explore-grid-layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 1.5rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+/* Card Styling Geometry */
+.explore-card-wrapper {
+  background: #FDFBF7;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(45, 37, 30, 0.03);
+}
+
+.card-image-container {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.card-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-price-overlay {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: #E5A982; 
+  color: #2D251E;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.card-content-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-location-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.card-location-text {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #8A7A6E;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.btn-view-details {
+  background-color: #FFFFFF;
+  color: #A8441B;
+  border: 1px solid rgba(168, 68, 27, 0.2);
+  padding: 0.25rem 0.65rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.card-main-title {
+  font-family: Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2D251E;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
+}
+
+.card-description-snippet {
+  font-size: 0.85rem;
+  color: #7A6E63;
+  line-height: 1.4;
+  margin: 0 0 1.25rem 0;
+}
+
+.card-meta-footer {
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px solid #EBE5DC;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #7A6E63;
+}
+
+.card-meta-rating {
+  font-weight: 600;
+  color: #2D251E;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.card-meta-rating span {
+  color: #D99B26;
+}
+
+/* Pagination Control Styles */
+.pagination-nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 2.5rem 0 1rem 0;
+}
+
+.pagination-btn-step {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #E6DFD5;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  color: #4A3E3D;
+}
+
+.pagination-btn-step.active {
+  background-color: #A8441B;
+  color: #FFFFFF;
+  border-color: #A8441B;
+}
+
+/* Responsive Fallbacks */
+@media (max-width: 1150px) {
+  .explore-layout {
+    grid-template-columns: 210px 1fr;
+    gap: 1.5rem;
+  }
+  .explore-grid-layout {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
