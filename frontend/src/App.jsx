@@ -102,11 +102,17 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import LandingPage from './pages/LandingPage';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Onboarding from './pages/Onboarding';
 import Home from './pages/Home';
 import Explore from './pages/Explore';
 import ReviewPage from './pages/ReviewPage'; // Import the new review page
 import ExperienceDetail from './pages/ExperienceDetail'; // Import the new details & review page
-import './App.css';
+import guideProfile from './pages/GuideProfile'; // Import the new details & review page
+import './styles/index.css';
+import GuideProfile from './pages/GuideProfile';
+import BookingPage from './pages/BookingPage';
+import PaymentPage from './pages/PaymentPage';
+// import './App.css';
 
 function App() {
   return (
@@ -122,6 +128,8 @@ function App() {
         {/* Auth Channels */}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+
+                <Route path="/onboarding" element={<Onboarding />} />
         
         {/* Main Dashboard Hubs */}
         <Route path="/home" element={<Home />} />
@@ -135,6 +143,9 @@ function App() {
 
         {/* <Route path="/explore/detail" element={<ExperienceDetail />} /> */}
 <Route path="/review" element={<ReviewPage />} />
+<Route path="/guideprofile" element={<GuideProfile />} />
+<Route path="/booking" element={<BookingPage />} />
+<Route path="/payment" element={<PaymentPage />} />
       </Routes>
     </Router>
   );

@@ -1,0 +1,384 @@
+/* Container Spacers & Global Elements */
+.booking-page-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 20px;
+  flex: 1;
+  font-family: 'Inter', sans-serif;
+  color: #2D241E;
+}
+
+/* Timeline/Breadcrumbs Component Stepper */
+.booking-timeline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+.timeline-step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #AFA69E;
+}
+.timeline-step.active {
+  color: #A0441E;
+}
+.timeline-step .step-number {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #E6DFD5;
+  color: #7E7267;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+.timeline-step.active .step-number {
+  background-color: #A0441E;
+  color: white;
+}
+.timeline-line {
+  height: 1px;
+  width: 60px;
+  background-color: #E6DFD5;
+}
+
+/* Page Column Structures */
+.booking-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 50px;
+  align-items: start;
+}
+
+/* Dynamic Panel Section Header Styles */
+.form-step-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+.payment-subtitle {
+  color: #6E6156;
+  margin-top: -15px;
+  margin-bottom: 30px;
+}
+
+/* Core Form Formatting Input Framework */
+.form-input-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #554840;
+}
+.form-group input, .form-group textarea {
+  padding: 12px 16px;
+  border: 1px solid #C4B9B0;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  color: #2D241E;
+  font-size: 0.95rem;
+  transition: border-color 0.2s;
+}
+.form-group input:focus, .form-group textarea:focus {
+  border-color: #A0441E;
+  outline: none;
+}
+
+/* Counter Area Wrapper Formatting */
+.guest-counter-section, .optional-extras-section {
+  margin-top: 35px;
+  border-top: 1px solid #E6DFD5;
+  padding-top: 25px;
+}
+.guest-counter-section h3, .optional-extras-section h3 {
+  font-size: 1.1rem;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+.counter-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid #E6DFD5;
+  padding: 20px;
+  border-radius: 12px;
+}
+.counter-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #8C7B70;
+  margin: 0 0 5px 0;
+}
+.counter-value-text {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+.counter-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border: 1px solid #C4B9B0;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+.counter-controls button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #A0441E;
+}
+.counter-controls span {
+  font-weight: 600;
+  min-width: 15px;
+  text-align: center;
+}
+
+/* Optional Extras Checkboxes Styling */
+.extras-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.extra-card-option {
+  border: 1px solid #E6DFD5;
+  border-radius: 12px;
+  padding: 20px;
+  background-color: #FFFFFF;
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.extra-card-option:hover {
+  border-color: #C4B9B0;
+}
+.extra-card-option.selected {
+  border-color: #A0441E;
+  background-color: #FAF5F0;
+}
+.extra-card-option input[type="checkbox"] {
+  accent-color: #A0441E;
+  margin-top: 4px;
+}
+.extra-details h4 { margin: 0 0 5px 0; font-size: 1rem; }
+.extra-details p { margin: 0 0 12px 0; font-size: 0.85rem; color: #6E6156; line-height: 1.4; }
+.extra-price { font-size: 0.9rem; font-weight: 700; color: #A0441E; }
+
+/* Action Triggers Buttons Style */
+.btn-action-primary {
+  background-color: #A0441E;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 30px;
+}
+.btn-action-secondary {
+  background: none;
+  border: 1px solid #A0441E;
+  color: #A0441E;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 30px;
+}
+.dual-actions-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Payment Gateway Methods Sub-Tab Component Styling */
+.payment-tabs-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+}
+.payment-tab {
+  background-color: #FFFFFF;
+  border: 1px solid #E6DFD5;
+  border-radius: 8px;
+  padding: 15px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.2s;
+}
+.payment-tab.active {
+  border-color: #A0441E;
+  background-color: #FAF5F0;
+  color: #A0441E;
+}
+.wallet-redirect-message {
+  background-color: #FFFFFF;
+  border: 1px solid #E6DFD5;
+  padding: 25px;
+  border-radius: 8px;
+  text-align: center;
+  color: #554840;
+  line-height: 1.6;
+}
+
+/* Security Notice Box Overlay Styles */
+.security-notice-banner {
+  display: flex;
+  gap: 15px;
+  background-color: #EBF5EB;
+  border: 1px solid #D0E6D0;
+  color: #2E5A2B;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 30px 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+.security-notice-banner .shield-icon {
+  font-size: 1.2rem;
+}
+
+/* --- RIGHT COLUMN STICKY WIDGET CARD --- */
+.summary-sticky-card {
+  border: 1px solid #E6DFD5;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #FFFFFF;
+  position: sticky;
+  top: 30px;
+}
+.summary-hero-img-wrapper {
+  height: 140px;
+  background-image: url('https://via.placeholder.com/400x150'); /* Dynamically map backdrop assets */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.summary-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 20%, rgba(0,0,0,0.7));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+}
+.summary-hero-overlay h3 { color: white; margin: 0 0 4px 0; font-family: 'Playfair Display', serif; font-size: 1.25rem; }
+.summary-hero-overlay p { color: #E6DFD5; margin: 0; font-size: 0.8rem; }
+
+.host-mini-info-row {
+  padding: 20px;
+  border-bottom: 1px solid #F5ECE3;
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 12px;
+  align-items: center;
+}
+.host-avatar-placeholder {
+  width: 40px;
+  height: 40px;
+  background-color: #C4B9B0;
+  border-radius: 50%;
+}
+.hosted-by-tag { font-size: 0.75rem; color: #8C7B70; margin: 0; }
+.host-mini-info-row h4 { margin: 2px 0 0 0; font-size: 0.95rem; }
+.trip-dates-meta {
+  grid-column: span 2;
+  margin-top: 10px;
+  background-color: #FAF9F6;
+  padding: 10px 15px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+.trip-dates-meta p { margin: 0; }
+
+/* Pricing breakdown item list layout ledger configuration */
+.pricing-breakdown-ledger {
+  padding: 20px;
+  border-bottom: 1px solid #F5ECE3;
+}
+.price-item-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #6E6156;
+  margin-bottom: 12px;
+}
+.price-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #E6DFD5;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+.final-price-amt {
+  color: #A0441E;
+  font-size: 1.2rem;
+}
+
+/* Terracotta Contextual Social Impact Statement Layout */
+.impact-endorsement-banner {
+  margin: 20px;
+  background-color: #FAF5F0;
+  border-left: 3px solid #A0441E;
+  padding: 15px;
+  display: flex;
+  gap: 12px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #554840;
+}
+.impact-endorsement-banner p { margin: 0; }
+.sprout-icon { font-size: 1.1rem; }
+
+.impact-tags-footer {
+  padding: 0 20px 20px 20px;
+  display: flex;
+  gap: 10px;
+}
+.tag-green { color: #2E5A2B; font-size: 0.75rem; font-weight: 600; }
+.tag-orange { color: #A0441E; font-size: 0.75rem; font-weight: 600; }
+
+/* Quick View Transition effects animation */
+.fade-in {
+  animation: fadeInEffect 0.35s ease-in-out;
+}
+@keyframes fadeInEffect {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}

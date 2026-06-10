@@ -1,0 +1,583 @@
+/* --- Global Wrappers & Navigation Configurations --- */
+.hp-payment-view-wrapper {
+  background-color: #FDFBF7;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', -apple-system, sans-serif;
+  color: #2D241E;
+}
+
+.hp-global-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #F0EAE1;
+}
+
+.nav-brand-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2D241E;
+  letter-spacing: -0.5px;
+}
+
+.nav-menu-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-menu-links a {
+  text-decoration: none;
+  color: #7E7267;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.nav-menu-links a.active {
+  color: #A0441E;
+  font-weight: 600;
+}
+
+.nav-profile-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.notification-bell-btn {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.user-profile-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #F5ECE3;
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+.profile-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.profile-avatar-circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #A0441E;
+  background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80');
+  background-size: cover;
+}
+
+/* --- Layout Body Container Structures --- */
+.payment-body-container {
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 20px;
+  flex: 1;
+}
+
+/* --- Multi-Step Timeline Indicator Tracker --- */
+.step-flow-stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 45px;
+}
+
+.flow-node {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.flow-node.completed { color: #7E7267; }
+.flow-node.active { color: #A0441E; }
+.flow-node.pending { color: #C4B9B0; }
+
+.node-idx {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.flow-node.completed .node-idx { background-color: #E6DFD5; color: #7E7267; }
+.flow-node.active .node-idx { background-color: #A0441E; color: #FFFFFF; }
+.flow-node.pending .node-idx { background-color: #F0EAE1; color: #C4B9B0; }
+
+.flow-connector {
+  height: 1px;
+  width: 50px;
+  background-color: #E6DFD5;
+}
+
+/* --- Dynamic Content Grid Layout System --- */
+.payment-grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 60px;
+  align-items: start;
+}
+
+/* --- Left Column Elements: Payment Forms --- */
+.section-title-header {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 30px 0;
+}
+
+.section-subtitle-label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #2D241E;
+  margin-bottom: 15px;
+}
+
+/* --- Gateway Methods Horizontal Tab Selection Components --- */
+.gateway-selector-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 35px;
+}
+
+.gateway-card-btn {
+  background-color: #FFFFFF;
+  border: 1px solid #E6DFD5;
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  text-align: left;
+  position: relative;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gateway-card-btn:hover {
+  border-color: #C4B9B0;
+  background-color: #FAF9F5;
+}
+
+.gateway-card-btn.selected {
+  border-color: #A0441E;
+  background-color: #FFF9F5;
+  box-shadow: 0 0 0 1px #A0441E;
+}
+
+.radio-dot-indicator {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid #C4B9B0;
+  margin-top: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gateway-card-btn.selected .radio-dot-indicator {
+  border-color: #A0441E;
+}
+
+.gateway-card-btn.selected .radio-dot-indicator::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #A0441E;
+}
+
+.gateway-emoji-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.gateway-btn-text strong {
+  display: block;
+  font-size: 0.95rem;
+  color: #2D241E;
+  margin-bottom: 2px;
+}
+
+.gateway-btn-text .sub-tag {
+  display: block;
+  font-size: 0.75rem;
+  color: #7E7267;
+}
+
+/* --- Inputs and Credentials Forms Box Configurations --- */
+.card-credentials-form-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field-input-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #554840;
+}
+
+.input-with-inline-assets {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-with-inline-assets input {
+  width: 100%;
+  padding-right: 80px;
+}
+
+.card-credentials-form-box input {
+  padding: 14px 16px;
+  border: 1px solid #E6DFD5;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background-color: #FFFDFB;
+  color: #2D241E;
+  transition: border-color 0.2s;
+}
+
+.card-credentials-form-box input:focus {
+  border-color: #A0441E;
+  outline: none;
+  background-color: #FFFFFF;
+}
+
+.input-fields-split-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.info-tooltip-trigger {
+  cursor: help;
+  font-size: 0.8rem;
+  color: #AFA69E;
+  margin-left: 4px;
+}
+
+.wallet-redirection-notice-box {
+  background-color: #FFFFFF;
+  border: 1px solid #E6DFD5;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  color: #554840;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* --- Trust Compliance Banner Badges --- */
+.ssl-encryption-compliance-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background-color: #EBF7EE;
+  border: 1px solid #D2ECD9;
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin: 30px 0;
+}
+
+.compliance-shield-icon {
+  font-size: 1.1rem;
+  color: #2E6B3E;
+}
+
+.ssl-encryption-compliance-banner p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #2E6B3E;
+  line-height: 1.4;
+}
+
+.payment-submission-cta-btn {
+  width: 100%;
+  background-color: #A0441E;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.payment-submission-cta-btn:hover {
+  background-color: #883716;
+}
+
+/* --- Right Column Sidebar: Itinerary Sticky Cards Summary Components --- */
+.itinerary-sticky-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E6DFD5;
+  border-radius: 14px;
+  overflow: hidden;
+  position: sticky;
+  top: 40px;
+}
+
+.itinerary-hero-banner-image {
+  height: 170px;
+  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1627894167527-38e2bc7775bc?w=500&auto=format&fit=crop&q=80');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.banner-vignette-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+}
+
+.selected-category-tag {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #FFFDFB;
+  letter-spacing: 1px;
+  opacity: 0.9;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.itinerary-title-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.ledger-breakdown-table-box {
+  padding: 24px;
+}
+
+.ledger-data-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  font-size: 0.9rem;
+}
+
+.ledger-label-text { color: #554840; }
+.ledger-numeric-val { font-weight: 500; color: #2D241E; }
+
+.ledger-grand-total-divider-line {
+  height: 1px;
+  background-color: #F0EAE1;
+  margin: 20px 0;
+}
+
+.ledger-grand-total-display-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.total-title-text {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #2D241E;
+}
+
+.total-disclaimer-subtext {
+  margin: 4px 0 0 0;
+  font-size: 0.75rem;
+  color: #7E7267;
+  line-height: 1.3;
+  max-width: 180px;
+}
+
+.total-prominent-price-tag {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #A0441E;
+  font-family: 'Playfair Display', serif;
+}
+
+.itinerary-impact-footer-metrics-box {
+  background-color: #FAF8F5;
+  padding: 16px 24px;
+  border-top: 1px solid #F0EAE1;
+}
+
+.impact-box-header-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #7E7267;
+  letter-spacing: 1px;
+  margin: 0 0 10px 0;
+}
+
+.impact-badges-flex-row {
+  display: flex;
+  gap: 15px;
+}
+
+.sustainability-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.badge-bullet-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.badge-green { color: #2E6B3E; }
+.badge-green .badge-bullet-dot { background-color: #2E6B3E; }
+
+.badge-orange { color: #A0441E; }
+.badge-orange .badge-bullet-dot { background-color: #A0441E; }
+
+/* --- Global Footer Brand Component Architecture --- */
+.hp-global-footer {
+  background-color: #22201E;
+  color: #E6DFD5;
+  padding: 60px 60px 30px 60px;
+  margin-top: auto;
+}
+
+.footer-top-columns-layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.footer-brand-summary-column h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: #FFFFFF;
+  margin: 0 0 15px 0;
+}
+
+.footer-brand-tagline {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #AFA69E;
+  margin-bottom: 20px;
+}
+
+.footer-social-icons-row {
+  display: flex;
+  gap: 15px;
+  cursor: pointer;
+}
+
+.footer-navigation-links-column h4, .footer-newsletter-subscribe-column h4 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #FFFFFF;
+  margin: 0 0 20px 0;
+}
+
+.footer-navigation-links-column a {
+  display: block;
+  text-decoration: none;
+  color: #AFA69E;
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+}
+
+.footer-navigation-links-column a:hover {
+  color: #FFFFFF;
+}
+
+.footer-newsletter-subscribe-column p {
+  font-size: 0.85rem;
+  color: #AFA69E;
+  margin-bottom: 15px;
+}
+
+.footer-subscribe-input-form-control {
+  display: flex;
+}
+
+.footer-subscribe-input-form-control input {
+  background-color: #2D2A27;
+  border: 1px solid #443F3B;
+  border-radius: 4px 0 0 4px;
+  padding: 12px;
+  color: #FFFFFF;
+  font-size: 0.85rem;
+  flex: 1;
+}
+
+.footer-subscribe-input-form-control button {
+  background-color: #A0441E;
+  color: #FFFFFF;
+  border: none;
+  padding: 0 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.footer-copyright-bottom-legal-bar {
+  border-top: 1px solid #332F2C;
+  padding-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #7E7267;
+}
+
+.footer-legal-links-row a {
+  color: #7E7267;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+/* --- Shared Utility Keyframes Animations --- */
+.fade-in-smooth {
+  animation: componentEntranceFrame 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes componentEntranceFrame {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
