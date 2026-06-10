@@ -1,0 +1,358 @@
+/* --- Base Rulesets --- */
+.hp-bookings-dashboard-root {
+  background-color: #FDFBF7;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', -apple-system, sans-serif;
+  color: #2D241E;
+}
+
+.bookings-dashboard-container {
+  max-width: 1040px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 60px 24px;
+  flex: 1;
+}
+
+/* --- Typography Block Architecture --- */
+.dashboard-header-block {
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.dashboard-main-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2D241E;
+  margin: 0 0 12px 0;
+}
+
+.dashboard-subtitle {
+  font-size: 1.05rem;
+  color: #7E7267;
+  max-width: 640px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* --- Tabs Pipeline Control Bar --- */
+.status-tab-navigation-bar {
+  display: flex;
+  gap: 32px;
+  border-bottom: 1px solid #E6DFD5;
+  margin-bottom: 32px;
+}
+
+.tab-toggle-btn {
+  background: none;
+  border: none;
+  padding: 12px 4px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #7E7267;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s;
+}
+
+.tab-toggle-btn:hover {
+  color: #2D241E;
+}
+
+.tab-toggle-btn.active {
+  color: #A0441E;
+  font-weight: 600;
+}
+
+.tab-toggle-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #A0441E;
+}
+
+.tab-count-indicator {
+  background-color: #F5ECE3;
+  color: #A0441E;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.tab-count-indicator.count-zero {
+  background-color: #FAF6F0;
+  color: #AFA69E;
+}
+
+/* --- List Pipeline Layout and Horizontal Cards --- */
+.bookings-list-view-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 64px;
+}
+
+.booking-horizontal-row-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E6DFD5;
+  border-radius: 12px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(45, 36, 30, 0.02);
+}
+
+.booking-card-media-viewport {
+  width: 280px;
+  min-width: 280px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.media-context-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 4px;
+  backdrop-filter: blur(4px);
+}
+
+.media-context-badge.badge-eco {
+  background-color: rgba(235, 247, 238, 0.95);
+  color: #2E6B3E;
+  border: 1px solid rgba(212, 236, 217, 0.5);
+}
+
+.media-context-badge.badge-culture {
+  background-color: rgba(254, 243, 199, 0.95);
+  color: #92400E;
+  border: 1px solid rgba(252, 211, 77, 0.5);
+}
+
+/* --- Card Details & Metrics Layout --- */
+.booking-card-metadata-payload {
+  flex: 1;
+  padding: 24px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.payload-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.booking-item-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #2D241E;
+  margin: 0 0 4px 0;
+}
+
+.booking-item-curator {
+  font-size: 0.85rem;
+  color: #7E7267;
+  margin: 0;
+}
+
+.curator-highlight {
+  color: #2D241E;
+  font-weight: 500;
+}
+
+.itinerary-live-status-pill {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #2E6B3E;
+  background-color: #EBF7EE;
+  padding: 4px 10px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.booking-item-location-pin {
+  font-size: 0.85rem;
+  color: #554840;
+  margin: 0 0 20px 0;
+}
+
+.booking-logistical-parameters-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  border-top: 1px solid #FAF6F0;
+  padding-top: 16px;
+  margin-bottom: 24px;
+}
+
+.param-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #AFA69E;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.param-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2D241E;
+  margin: 0;
+}
+
+/* --- Card Operations and Footer Control elements --- */
+.booking-action-buttons-footer-row {
+  display: flex;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.primary-tinted-action-btn {
+  background-color: #A0441E;
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.primary-tinted-action-btn:hover {
+  background-color: #853716;
+}
+
+.secondary-minimal-action-btn {
+  background: none;
+  border: 1px solid #C4B9B0;
+  color: #554840;
+  padding: 10px 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.secondary-minimal-action-btn:hover {
+  border-color: #A0441E;
+  color: #A0441E;
+}
+
+.empty-state-fallback-card {
+  padding: 40px;
+  text-align: center;
+  background-color: #FFFFFF;
+  border: 1px dashed #C4B9B0;
+  border-radius: 12px;
+  color: #7E7267;
+}
+
+/* --- Travel Journal Grid Composition Section --- */
+.journal-reflection-callout-card {
+  display: flex;
+  background-color: #FAF6F0;
+  border-radius: 16px;
+  padding: 48px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  text-align: left;
+}
+
+.reflection-text-content {
+  flex: 1.2;
+}
+
+.reflection-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #2D241E;
+  margin: 0 0 16px 0;
+}
+
+.reflection-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #554840;
+  margin: 0 0 28px 0;
+}
+
+.archive-navigation-anchor-link {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #A0441E;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.archive-navigation-anchor-link:hover .arrow-vector {
+  transform: translateX(4px);
+}
+
+.arrow-vector {
+  transition: transform 0.2s;
+}
+
+.reflection-visuals-composition {
+  flex: 0.8;
+  display: flex;
+  position: relative;
+  height: 180px;
+  align-items: center;
+  justify-content: center;
+}
+
+.composition-img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(45, 36, 30, 0.12);
+  position: absolute;
+}
+
+.composition-img.stack-under {
+  transform: rotate(-8deg) translateX(-30px);
+  z-index: 1;
+}
+
+.composition-img.stack-over {
+  transform: rotate(6deg) translateX(40px);
+  z-index: 2;
+  border: 4px solid #FFFFFF;
+}
+
+/* --- Base Transitions and Frame Drivers --- */
+.animate-fade-in {
+  animation: runFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes runFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -113,6 +113,7 @@ import GuideProfile from './pages/GuideProfile';
 import BookingPage from './pages/BookingPage';
 import PaymentPage from './pages/PaymentPage';
 import ConfirmationPage from './pages/ConfirmationPage';
+import MyBookingsPage from './pages/MyBookingsPage';
 // import './App.css';
 
 function App() {
@@ -148,6 +149,7 @@ function App() {
 <Route path="/booking" element={<BookingPage />} />
 <Route path="/payment" element={<PaymentPage />} />
 <Route path="/confirmation" element={<ConfirmationPage />} />
+<Route path="/mybookings" element={<MyBookingsPage />} />
       </Routes>
     </Router>
   );
