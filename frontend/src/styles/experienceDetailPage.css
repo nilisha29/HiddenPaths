@@ -1,0 +1,692 @@
+/* --- Root Setup and Scaffolding --- */
+.hp-detail-view-root {
+  background-color: #FDFBF7;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', -apple-system, sans-serif;
+  color: #2D241E;
+}
+
+.detail-page-layout-container {
+  max-width: 1120px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+/* --- Breadcrumbs and Headers --- */
+.experience-title-header {
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.header-breadcrumbs-meta {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+}
+
+.rating-pill-avg {
+  font-weight: 600;
+}
+
+.location-context-tag {
+  color: #554840;
+  text-decoration: underline;
+}
+
+.verification-pill {
+  background-color: #EBF7EE;
+  color: #2E6B3E;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.title-action-flex-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.experience-main-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin: 0;
+  color: #2D241E;
+}
+
+.utility-share-save-group {
+  display: flex;
+  gap: 12px;
+}
+
+.util-action-btn {
+  background-color: #FFFFFF;
+  border: 1px solid #E6DFD5;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* --- Graphic Mosaic Dashboard Image Layouts --- */
+.experience-mosaic-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 12px;
+  height: 380px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 48px;
+}
+
+.experience-mosaic-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.experience-mosaic-grid img:hover {
+  transform: scale(1.02);
+}
+
+.mosaic-main-hero-frame {
+  height: 100%;
+}
+
+.mosaic-sub-thumbnails-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+}
+
+.mosaic-sub-thumbnails-column img {
+  height: calc(50% - 6px);
+}
+
+/* --- Layout Splitting System Mechanics --- */
+.detail-two-column-split-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 64px;
+}
+
+.context-narrative-left-pane {
+  text-align: left;
+}
+
+/* --- Host Bio Elements --- */
+.host-profile-byline-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.host-avatar-large {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.host-profile-byline-card h3 {
+  font-size: 1.15rem;
+  margin: 0 0 4px 0;
+  font-weight: 600;
+}
+
+.host-meta-subtext {
+  font-size: 0.85rem;
+  color: #7E7267;
+  margin: 0;
+}
+
+.view-host-profile-btn {
+  margin-left: auto;
+  background: none;
+  border: 1px solid #C4B9B0;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pane-separator {
+  border: none;
+  height: 1px;
+  background-color: #E6DFD5;
+  margin: 32px 0;
+}
+
+.narrative-block h4, .amenities-included-box-matrix h4, .itinerary-timeline-vertical h4, .location-mapping-preview-section h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  margin: 0 0 20px 0;
+}
+
+.narrative-block p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #554840;
+  margin-bottom: 16px;
+}
+
+/* --- Included Amenities Box Blocks --- */
+.amenities-flex-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.amenity-item-tile {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #554840;
+}
+
+/* --- Vertical Itinerary Timelines --- */
+.itinerary-timeline-vertical {
+  margin-bottom: 40px;
+}
+
+.timeline-node-item {
+  display: flex;
+  gap: 32px;
+  position: relative;
+  padding-bottom: 24px;
+}
+
+.timeline-node-item::before {
+  content: '';
+  position: absolute;
+  left: 90px;
+  top: 6px;
+  bottom: 0;
+  width: 2px;
+  background-color: #E6DFD5;
+}
+
+.timeline-node-item:last-child::before {
+  display: none;
+}
+
+.node-timestamp {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #A0441E;
+  width: 70px;
+  min-width: 70px;
+}
+
+.node-content-text h5 {
+  font-size: 1rem;
+  margin: 0 0 6px 0;
+  font-weight: 600;
+}
+
+.node-content-text p {
+  font-size: 0.9rem;
+  color: #7E7267;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* --- Map Placeholder Frame --- */
+.map-placeholder-graphic {
+  height: 24px;
+  background-color: #EAE3D8;
+  border-radius: 12px;
+  background-image: repeating-linear-gradient(45deg, #EAE3D8, #EAE3D8 10px, #E3DBCF 10px, #E3DBCF 20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+}
+
+.map-overlay-pin {
+  background-color: #FFFFFF;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(45, 36, 30, 0.1);
+}
+
+/* --- Sticky Checkout Panels --- */
+.booking-engine-sticky-sidebar-pane {
+  position: relative;
+}
+
+.sticky-booking-checkout-card {
+  position: sticky;
+  top: 40px;
+  background-color: #FFFFFF;
+  border: 1px solid #E6DFD5;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 24px rgba(45, 36, 30, 0.04);
+  text-align: left;
+}
+
+.price-header-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 24px;
+}
+
+.price-header-line h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.per-person-unit {
+  font-size: 0.9rem;
+  color: #7E7267;
+  font-weight: 400;
+}
+
+.rating-sidebar-inline {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.booking-parameters-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.form-input-field-group {
+  border: 1px solid #C4B9B0;
+  border-radius: 8px;
+  padding: 8px 14px;
+}
+
+.form-input-field-group label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #2D241E;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.form-input-field-group input, .form-input-field-group select {
+  border: none;
+  background: none;
+  width: 100%;
+  font-size: 0.95rem;
+  color: #2D241E;
+  outline: none;
+}
+
+.primary-booking-submit-cta {
+  background-color: #A0441E;
+  color: #FFFFFF;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 8px;
+}
+
+.primary-booking-submit-cta:hover {
+  background-color: #853716;
+}
+
+.no-charge-warning-notice {
+  font-size: 0.8rem;
+  color: #7E7267;
+  text-align: center;
+  margin: 0 0 24px 0;
+}
+
+.price-breakdown-ledger-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-bottom: 1px solid #FAF6F0;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.ledger-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  color: #554840;
+}
+
+.ledger-row.total-row {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #2D241E;
+  border-top: 1px solid #F0EAE1;
+  padding-top: 12px;
+}
+
+.impact-endorsement-banner-pill {
+  background-color: #FAF6F0;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: #7E7267;
+}
+
+.section-divider-line {
+  border: none;
+  height: 1px;
+  background-color: #E6DFD5;
+  margin: 64px 0 48px 0;
+}
+
+/* --- Review Module Elements --- */
+.community-reviews-presentation-section {
+  text-align: left;
+}
+
+.reviews-section-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.reviews-section-header-row h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.75rem;
+  margin: 0;
+}
+
+.write-review-trigger-action-btn {
+  background-color: #FFFFFF;
+  border: 1px solid #A0441E;
+  color: #A0441E;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.write-review-trigger-action-btn:hover {
+  background-color: #A0441E;
+  color: #FFFFFF;
+}
+
+.reviews-cards-masonry-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+.individual-feedback-bubble-card {
+  background-color: #FFFFFF;
+  border: 1px solid #FAF6F0;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.reviewer-identity-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.reviewer-avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #F5ECE3;
+  color: #A0441E;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.reviewer-identity-bar h6 {
+  font-size: 0.95rem;
+  margin: 0 0 2px 0;
+  font-weight: 600;
+}
+
+.review-date {
+  font-size: 0.75rem;
+  color: #7E7267;
+  margin: 0;
+}
+
+.stars-output {
+  margin-left: auto;
+  font-size: 0.8rem;
+}
+
+.review-body-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #554840;
+  margin: 0;
+}
+
+.load-all-reviews-outline-btn {
+  background: none;
+  border: 1px solid #2D241E;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto 48px auto;
+}
+
+/* --- Unified Dynamic Sliding Form Component Drawer --- */
+.dynamic-review-composer-form-drawer {
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), margin 0.3s ease;
+}
+
+.dynamic-review-composer-form-drawer.collapsed-hidden {
+  max-height: 0;
+  margin-top: 0;
+}
+
+.dynamic-review-composer-form-drawer.expanded-visible {
+  max-height: 1200px; /* High ceiling bounds for transition rendering */
+  margin-top: 48px;
+}
+
+.review-card-cardboard-wrapper {
+  background-color: #FAF6F0;
+  border: 1px solid #E6DFD5;
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.review-form-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.experience-thumbnail-mini {
+  width: 44px;
+  height: 44px;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.review-form-header h5 {
+  font-size: 1rem;
+  margin: 0 0 2px 0;
+  font-weight: 600;
+}
+
+.review-form-header p {
+  font-size: 0.8rem;
+  color: #7E7267;
+  margin: 0;
+}
+
+.composer-headline-prompt {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.65rem;
+  text-align: center;
+  margin: 0 0 16px 0;
+}
+
+/* --- Interactive Multi Star Selector --- */
+.star-rating-interactive-row {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.interactive-star-unit {
+  font-size: 2.25rem;
+  cursor: pointer;
+  transition: transform 0.1s ease, color 0.1s ease;
+  user-select: none;
+}
+
+.interactive-star-unit:hover {
+  transform: scale(1.15);
+}
+
+.filled-star {
+  color: #FBBF24;
+}
+
+.empty-star {
+  color: #D9CFC1;
+}
+
+.inner-review-inputs-control {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inner-review-inputs-control textarea {
+  width: 100%;
+  height: 140px;
+  padding: 16px;
+  border: 1px solid #C4B9B0;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: #2D241E;
+  resize: vertical;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.inner-review-inputs-control textarea:focus {
+  border-color: #A0441E;
+}
+
+.image-uploader-dashed-container {
+  border: 2px dashed #C4B9B0;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  padding: 32px 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.upload-icon-vector {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.upload-main-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+}
+
+.upload-sub-text {
+  font-size: 0.75rem;
+  color: #7E7267;
+  margin: 0;
+}
+
+.form-drawer-footer-actions-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.cancel-form-btn {
+  background: none;
+  border: none;
+  color: #7E7267;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+.submit-review-cta-btn {
+  background-color: #A0441E;
+  color: #FFFFFF;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.submit-review-cta-btn:hover {
+  background-color: #853716;
+}
+
+/* --- Inline Animation Driver keyframes --- */
+.animate-slide-up-quick {
+  animation: slideUpTransition 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideUpTransition {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -114,6 +114,7 @@ import BookingPage from './pages/BookingPage';
 import PaymentPage from './pages/PaymentPage';
 import ConfirmationPage from './pages/ConfirmationPage';
 import MyBookingsPage from './pages/MyBookingsPage';
+import ExperienceDetailPage from './pages/ExperienceDetailPage';
 // import './App.css';
 
 function App() {
@@ -150,6 +151,7 @@ function App() {
 <Route path="/payment" element={<PaymentPage />} />
 <Route path="/confirmation" element={<ConfirmationPage />} />
 <Route path="/mybookings" element={<MyBookingsPage />} />
+<Route path="/experience/detail" element={<ExperienceDetailPage />} />
       </Routes>
     </Router>
   );
