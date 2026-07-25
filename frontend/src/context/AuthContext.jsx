@@ -20,11 +20,7 @@ export const AuthProvider = ({ children }) => {
           localStorage.setItem("hiddenpaths_user", JSON.stringify(res.data.data));
         })
         .catch((err) => {
-          // Only clear the session if the server explicitly rejected the
-          // token (401). A network blip, timeout, or momentary server
-          // hiccup during this background check should NOT log the user
-          // out from under them — that was the bug causing "not authorized"
-          // errors right after coming back from an eSewa/Khalti redirect.
+         
           if (err.response && err.response.status === 401) {
             logout();
           }
