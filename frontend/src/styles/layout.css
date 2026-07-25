@@ -1,0 +1,10 @@
+.site-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-cream-light);
+}
+.site-main {
+  flex: 1;
+  padding-bottom: 64px;
+}
