@@ -1,0 +1,120 @@
+.experience-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-card-media {
+  position: relative;
+  height: 190px;
+  overflow: hidden;
+}
+.experience-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.experience-card:hover .experience-card-media img {
+  transform: scale(1.05);
+}
+
+.experience-card-price-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--color-cream-light);
+  color: var(--color-rust);
+  font-weight: 700;
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-sm);
+}
+
+.experience-card-wishlist {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+
+.experience-card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+    background: rgb(233, 177, 165);
+
+}
+
+.experience-card-toprow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.experience-card-location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--color-forest);
+  font-weight: 500;
+}
+
+.experience-card-view-btn {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--color-cream);
+  color: var(--color-ink);
+  white-space: nowrap;
+}
+.experience-card-view-btn:hover {
+  background: var(--color-cream-dark);
+}
+
+.experience-card-title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+
+.experience-card-desc {
+  font-size: 13px;
+  color: var(--color-ink-60);
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.experience-card-divider {
+  height: 1px;
+  background: var(--color-border);
+  margin-bottom: 14px;
+}
+
+.experience-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.experience-card-duration {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--color-ink-60);
+}
