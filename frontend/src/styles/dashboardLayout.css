@@ -1,0 +1,138 @@
+.dash-shell {
+  min-height: 100vh;
+  background: var(--color-cream-dark);
+}
+
+.dash-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  overflow-y: auto;
+  background: var(--color-charcoal);
+  color: var(--color-cream-light);
+  display: flex;
+  flex-direction: column;
+  padding: 28px 20px;
+  flex-shrink: 0;
+  z-index: 30;
+}
+
+.dash-logo {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--color-cream-light);
+  margin-bottom: 4px;
+}
+.dash-logo span {
+  color: var(--color-rust-light);
+}
+
+.dash-role-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(246,239,226,0.5);
+  margin-bottom: 32px;
+}
+
+.dash-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.dash-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  color: rgba(246,239,226,0.7);
+  transition: background-color 0.2s ease;
+}
+.dash-nav-link:hover {
+  background: rgba(246,239,226,0.06);
+}
+.dash-nav-link.active {
+  background: var(--color-rust);
+  color: white;
+}
+.dash-nav-icon {
+  font-size: 16px;
+  width: 20px;
+  text-align: center;
+}
+
+.dash-logout {
+  background: none;
+  border: 1px solid rgba(246,239,226,0.2);
+  color: var(--color-cream-light);
+  border-radius: var(--radius-pill);
+  padding: 10px;
+  font-size: 13px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.dash-logout:hover {
+  background: rgba(246,239,226,0.08);
+}
+
+.dash-content {
+  margin-left: 250px;
+  min-width: 0;
+  min-height: 100vh;
+}
+
+.dash-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  height: 72px;
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+}
+.dash-topbar-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.dash-burger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.dash-main {
+  padding: 32px;
+}
+
+@media (max-width: 900px) {
+  .dash-sidebar {
+    left: -260px;
+    transition: left 0.25s ease;
+  }
+  .dash-sidebar.open {
+    left: 0;
+  }
+  .dash-content {
+    margin-left: 0;
+  }
+  .dash-burger {
+    display: block;
+  }
+  .dash-main {
+    padding: 20px;
+  }
+}

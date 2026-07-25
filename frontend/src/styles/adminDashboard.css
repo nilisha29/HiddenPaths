@@ -1,0 +1,60 @@
+/* Admin-panel-specific styling (settings form, detail-view modals).
+   Shared table/stat-tile/modal styles live in dashboardWidgets.css */
+
+.settings-form {
+  max-width: 560px;
+}
+
+.admin-search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  color: var(--color-ink-40);
+}
+.admin-search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: var(--color-ink);
+  background: transparent;
+}
+
+.table-user-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.table-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-rust);
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.detail-modal-section {
+  margin-bottom: 18px;
+}
+.detail-modal-label {
+  font-size: 12px;
+  color: var(--color-ink-40);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+.detail-modal-value {
+  font-size: 14px;
+  color: var(--color-ink);
+}
