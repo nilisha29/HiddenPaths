@@ -1,0 +1,30 @@
+/* Guide-panel-specific styling (dashboard, experiences, bookings, reviews,
+   profile). Shared table/stat-tile/modal styles live in dashboardWidgets.css */
+
+.guide-review-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  margin-bottom: 14px;
+  background: var(--color-white);
+}
+.guide-review-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.guide-review-experience {
+  font-size: 12px;
+  color: var(--color-ink-40);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.guide-review-reply-form {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+}
+.guide-review-reply-form input {
+  flex: 1;
+}
