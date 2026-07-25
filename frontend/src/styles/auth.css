@@ -1,0 +1,224 @@
+.auth-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-cream-dark);
+  padding: 40px 20px;
+}
+
+.auth-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  max-width: 960px;
+  min-height: 600px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.auth-visual {
+  position: relative;
+  background: linear-gradient(200deg, #2c1810 0%, #1a1a15 45%, #16241c 100%),
+    url("https://images.unsplash.com/photo-1544198365-f5d60b6d8190?w=1200&q=80");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 48px;
+}
+
+.auth-visual-dark {
+  background: linear-gradient(200deg, #0d1420 0%, #131311 60%),
+    url("https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200&q=80");
+  background-size: cover;
+  background-position: center;
+}
+
+.auth-visual-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(20, 18, 14, 0.1), rgba(10, 10, 8, 0.75));
+}
+
+.auth-visual-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.auth-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: var(--color-gold-light);
+}
+.auth-brand-light {
+  color: var(--color-cream-light);
+}
+.auth-brand-icon {
+  color: var(--color-gold);
+}
+
+.auth-quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 26px;
+  line-height: 1.4;
+  color: var(--color-cream-light);
+  margin: 0 0 16px;
+  max-width: 420px;
+}
+
+.auth-quote-author {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(246, 239, 226, 0.6);
+}
+
+.auth-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-cream-light);
+  padding: 48px 24px;
+  overflow-y: auto;
+}
+
+.auth-panel-inner {
+  width: 100%;
+  max-width: 420px;
+}
+
+.auth-title {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.auth-subtitle {
+  color: var(--color-ink-60);
+  margin-bottom: 32px;
+  font-size: 15px;
+}
+
+.auth-inline-link {
+  color: var(--color-rust);
+  font-weight: 500;
+  font-size: 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.auth-password-wrap {
+  position: relative;
+}
+.auth-password-toggle {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--color-ink-40);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.auth-footer-text {
+  text-align: center;
+  font-size: 14px;
+  color: var(--color-ink-60);
+  margin-top: 28px;
+}
+
+.field-hint {
+  font-size: 12px;
+  color: var(--color-ink-40);
+  margin-top: 6px;
+}
+
+.avatar-upload-group {
+  margin-bottom: 24px;
+}
+.avatar-upload {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.avatar-upload-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1.5px dashed var(--color-border);
+  background: var(--color-cream);
+  color: var(--color-ink-40);
+  font-family: var(--font-display);
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.avatar-upload-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.avatar-upload-hint {
+  font-size: 12px;
+  color: var(--color-ink-40);
+  margin-top: 2px;
+  max-width: 260px;
+}
+
+.guide-toggle {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--color-ink);
+  margin: 4px 0 4px;
+  cursor: pointer;
+}
+.guide-toggle input {
+  margin-top: 3px;
+  accent-color: var(--color-rust);
+}
+
+.guide-extra-fields {
+  background: var(--color-cream);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin: 12px 0 8px;
+}
+
+@media (max-width: 900px) {
+  .auth-screen {
+    padding: 0;
+  }
+  .auth-card {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    min-height: 100vh;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .auth-visual {
+    display: none;
+  }
+}
