@@ -11,4 +11,5 @@ const ComingSoon = ({ title }) => (
   </Layout>
 );
 
+
 export default ComingSoon;
