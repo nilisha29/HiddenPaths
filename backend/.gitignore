@@ -1,0 +1,22 @@
+# node_modules/
+# .env
+# uploads/*
+# !uploads/.gitkeep
+# npm-debug.log
+
+
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+.env.example
+**/.env
+**/.env.example
+
+# Uploads
+uploads/*
+!uploads/.gitkeep
+
+# Logs
+npm-debug.log*
