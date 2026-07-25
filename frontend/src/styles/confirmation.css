@@ -1,0 +1,56 @@
+.confirmation-page {
+  background: var(--color-cream-dark);
+  padding: 64px 0;
+  min-height: calc(100vh - 80px);
+}
+.confirmation-check {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--color-success-bg);
+  color: var(--color-success-text);
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+.confirmation-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: left;
+  box-shadow: var(--shadow-sm);
+}
+.confirmation-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border);
+}
+.extend-stay-card {
+  position: relative;
+  height: 200px;
+}
+.extend-stay-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.extend-stay-overlay {
+  position: absolute;
+  inset: auto 0 0 0;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,0.75));
+  color: white;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.extend-stay-overlay span {
+  font-size: 12px;
+  opacity: 0.85;
+}
