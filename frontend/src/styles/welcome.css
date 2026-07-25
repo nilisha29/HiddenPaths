@@ -1,0 +1,108 @@
+.welcome-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: linear-gradient(180deg, #ece1cd 0%, #e8b978 42%, #c1591e 72%, #7a3517 100%);
+}
+
+.welcome-inner {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+  background: var(--color-cream-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: 56px 48px;
+}
+
+.welcome-brand {
+  font-family: var(--font-display);
+  font-size: 20px;
+  letter-spacing: 0.14em;
+  color: var(--color-ink);
+  margin-bottom: 40px;
+}
+.welcome-brand span {
+  color: var(--color-rust);
+}
+
+.welcome-title {
+  font-size: 40px;
+  margin-bottom: 8px;
+}
+
+.welcome-subtitle {
+  color: var(--color-ink-60);
+  margin-bottom: 32px;
+}
+
+.welcome-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.welcome-tile {
+  background: var(--color-cream);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 28px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.2s ease;
+}
+.welcome-tile:hover {
+  transform: translateY(-2px);
+}
+.welcome-tile.selected {
+  background: var(--color-white);
+  border-color: var(--color-rust);
+  box-shadow: 0 0 0 2px rgba(181, 71, 27, 0.25);
+}
+
+.welcome-tile-icon {
+  font-size: 28px;
+}
+
+.welcome-tile-label {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--color-ink);
+}
+
+.welcome-cta {
+  padding: 14px 40px;
+  font-size: 15px;
+}
+
+.welcome-skip {
+  display: block;
+  margin: 16px auto 0;
+  background: none;
+  border: none;
+  color: var(--color-ink);
+  opacity: 0.75;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+@media (max-width: 560px) {
+  .welcome-inner {
+    padding: 36px 24px;
+  }
+  .welcome-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .welcome-title {
+    font-size: 30px;
+  }
+}
