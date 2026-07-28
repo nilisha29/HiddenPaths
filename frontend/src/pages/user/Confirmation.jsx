@@ -22,6 +22,15 @@ const Confirmation = () => {
     }).finally(() => setLoading(false));
   }, [bookingId]);
 
+  useEffect(() => {
+  const key = `booking-confirmed-${bookingId}`;
+
+  if (!sessionStorage.getItem(key)) {
+    toast.success("🎉 Your booking has been confirmed. Enjoy your experience!");
+    sessionStorage.setItem(key, "true");
+  }
+}, [bookingId, toast]);
+
   if (loading) return <Layout><div className="loading-state">Loading...</div></Layout>;
   if (!booking) return <Layout><div className="empty-state">Booking not found.</div></Layout>;
 
